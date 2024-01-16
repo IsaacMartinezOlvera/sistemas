@@ -9,6 +9,9 @@ if ($tipo_usuario == 1) {
     // Botón de registro de usuario
     echo '<a href="registro_usuario.php">Registrar Usuario</a>';
     echo '<a href="lista.php">Lista de usuarios</a>';
+    echo '<a href="cards.php">Tarjetas</a>';    
+    echo '<a href="categoria.php">Registrar categoria</a>';
+    echo '<a href="subcategoria.php">Registrar subcategoria</a>';
 
     echo '</div>';
 }
