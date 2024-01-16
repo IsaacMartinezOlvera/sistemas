@@ -1,22 +1,27 @@
 <?php
 session_start();
-include ('includes/conexion.php');
+include('includes/conexion.php');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $usuario = $_POST['usuario'];
     $contrasena = $_POST['contrasena'];
 
     // Consulta SQL para obtener la información del usuario
-    $consulta = "SELECT * FROM usuarios WHERE FullName = ? AND Passwo = ?";
+    $consulta = "SELECT * FROM usuarios WHERE FullName = ?";
     $stmt = $conexion->prepare($consulta);
-    $stmt->bind_param("ss", $usuario, $contrasena);
+    $stmt->bind_param("s", $usuario);
     $stmt->execute();
     $resultado = $stmt->get_result();
 
     if ($fila = $resultado->fetch_assoc()) {
-        $_SESSION['tipo_usuario'] = $fila['Puesto'];
-        header('Location: dashboard.php');
-        exit();
+        // Verificar la contraseña hasheada
+        if (password_verify($contrasena, $fila['Passwo'])) {
+            $_SESSION['tipo_usuario'] = $fila['Puesto'];
+            header('Location: dashboard.php');
+            exit();
+        } else {
+            $mensaje_error = 'Credenciales incorrectas';
+        }
     } else {
         $mensaje_error = 'Credenciales incorrectas';
     }
@@ -35,12 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="assets/css/tarjeta.css">
 </head>
 <body>
-<<<<<<< HEAD
     <h2>Login para iniciar sesión</h2>
-=======
-    <h1>Inicia seccion</h1>
-    <h2>Login</h2>
->>>>>>> dcad0d64c009c785754fc3b1b4eb642ff139e104
     <?php if (isset($mensaje_error)) { ?>
         <p style="color: red;"><?php echo $mensaje_error; ?></p>
     <?php } ?>
