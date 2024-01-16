@@ -32,10 +32,7 @@ include('includes/conexion.php');
     <div class="container mt-4">
         <h1 class="text-center mb-4">Usuarios registrados</h1>
 
-        <!-- Agregamos el formulario de búsqueda -->
-        <div class="form-group">
-            <input type="text" class="form-control" id="searchInput" placeholder="Buscar por nombre o correo">
-        </div>
+
 
         <div class="table-responsive">
             <table class="table table-bordered">
@@ -67,25 +64,6 @@ include('includes/conexion.php');
             </table>
         </div>
     </div>
-
-    <!-- Bootstrap JS y jQuery (puedes cambiarlo según tus necesidades) -->
-    <!-- Script para filtrar los resultados de la tabla -->
-    <script>
-        $(document).ready(function() {
-            $('#searchInput').on('input', function() {
-                var searchTerm = $(this).val().toLowerCase();
-                $('tbody tr').each(function() {
-                    var fullName = $(this).find('td:first-child').text().toLowerCase();
-                    var email = $(this).find('td:nth-child(2)').text().toLowerCase();
-                    if (fullName.includes(searchTerm) || email.includes(searchTerm)) {
-                        $(this).show();
-                    } else {
-                        $(this).hide();
-                    }
-                });
-            });
-        });
-    </script>
 
 </body>
 
