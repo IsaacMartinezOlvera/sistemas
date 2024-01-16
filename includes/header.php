@@ -8,7 +8,8 @@ if ($tipo_usuario == 1) {
     
     // Botón de registro de usuario
     echo '<a href="registro_usuario.php">Registrar Usuario</a>';
-    
+    echo '<a href="lista.php">Lista de usuarios</a>';
+
     echo '</div>';
 }
 ?>
