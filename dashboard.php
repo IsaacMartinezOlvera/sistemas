@@ -21,11 +21,11 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
     <h2>Dashboard</h2>
 
     <?php if ($tipo_usuario == 1) { ?>
-        <p>Bienvenido, administrador (Tipo 1).</p>
+        <p>Bienvenido, administrador.</p>
         <!-- Contenido específico para administradores -->
         <!-- <a href="registro_usuario.php">Registrar Usuario</a> -->
     <?php } elseif ($tipo_usuario == 2) { ?>
-        <p>Bienvenido, usuario (Tipo 2).</p>
+        <p>Bienvenido, usuario.</p>
         <!-- Contenido específico para usuarios -->
     <?php } ?>
 
