@@ -8,6 +8,18 @@ if (!isset($_SESSION['tipo_usuario'])) {
 
 $tipo_usuario = $_SESSION['tipo_usuario'];
 include('includes/conexion.php');
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Procesar el formulario
+    $nombre_subcategoria = $_POST['nombre_subcategoria'];
+    $categoria = $_POST['categoria'];
+
+    // Aquí puedes hacer lo que necesites con $nombre_subcategoria y $categoria
+
+    // Ejemplo de impresión
+    echo "Categoría: $categoria<br>";
+    echo "Subcategoría: $nombre_subcategoria<br>";
+}
 ?>
 
 <!DOCTYPE html>
@@ -28,7 +40,7 @@ include('includes/conexion.php');
             <label>Categoría<span style="color:red;">*</span></label>
             <select name="categoria" class="form-control">
                 <?php
-                // Conectar a la base de datos
+                // Conectar a la base de datos (puedes considerar incluir esta parte en el archivo de conexión)
                 $servername = "localhost";
                 $username = "root";
                 $password = "";
