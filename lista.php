@@ -17,7 +17,7 @@ include('includes/conexion.php');
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>SIOB | Estudiantes</title>
+    <title>DIF | Usuarios registrados</title>
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <link href="assets/css/font-awesome.css" rel="stylesheet" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
@@ -30,7 +30,7 @@ include('includes/conexion.php');
     <?php include('includes/header.php'); ?>
 
     <div class="container mt-4">
-        <h1 class="text-center mb-4">Estudiantes registrados</h1>
+        <h1 class="text-center mb-4">Usuarios registrados</h1>
 
         <!-- Agregamos el formulario de búsqueda -->
         <div class="form-group">
