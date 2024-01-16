@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="assets/css/tarjeta-dist.css">
 </head>
 <body>
-    <h2>Login para iniciar sesión</h2>
+    <!-- <h2>Login para iniciar sesión</h2> -->
     <?php if (isset($mensaje_error)) { ?>
         <p style="color: red;"><?php echo $mensaje_error; ?></p>
     <?php } ?>
