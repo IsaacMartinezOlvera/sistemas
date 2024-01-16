@@ -22,7 +22,7 @@ include('includes/conexion.php');
     <link href="assets/css/font-awesome.css" rel="stylesheet" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 
-    <link href="assets/css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/tarjeta-dist.css">
 </head>
 
 <body>
@@ -62,6 +62,9 @@ include('includes/conexion.php');
                     <?php } ?>
                 </tbody>
             </table>
+        </div>
+        <div>
+            <a href="dashboard.php" class="btn btn-primary">Volver al panel de administrador</a>
         </div>
     </div>
 

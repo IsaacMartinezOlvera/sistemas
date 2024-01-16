@@ -1,10 +1,12 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['tipo_usuario']) || $_SESSION['tipo_usuario'] != 1) {
+if (!isset($_SESSION['tipo_usuario'])) {
     header('Location: index.php');
     exit();
 }
+
+$tipo_usuario = $_SESSION['tipo_usuario'];
 
 include('includes/conexion.php');
 
@@ -21,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $consulta = "INSERT INTO usuarios (FullName, Passwo, Puesto, EmailId) VALUES (?, ?, ?, ?)";
     $stmt = $conexion->prepare($consulta);
     $stmt->bind_param("ssis", $nombre, $hashed_password, $tipo_usuario, $email);
-    
+
     if ($stmt->execute()) {
         echo "Usuario registrado correctamente.";
         // Puedes redirigir a otra página si lo deseas
@@ -38,12 +40,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de Usuario</title>
 </head>
+
 <body>
+<?php include('includes/header.php'); ?>
+
     <h2>Registrar Nuevo Usuario</h2>
 
     <!-- Formulario para registrar un nuevo usuario -->
@@ -55,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <input type="text" name="email" required>
 
 
-        <br> 
+        <br>
         <label for="password">Contraseña:</label>
         <input type="password" name="password" required>
         <br>
@@ -71,4 +77,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <br>
     <a href="dashboard.php">Volver al Dashboard</a>
 </body>
+
 </html>
