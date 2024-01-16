@@ -26,16 +26,6 @@
 
 }
 
-.contenido button {
-    display: inline-block;
-    padding: 16px 32px;
-    background-color: #3498db;
-    text-decoration: none;
-    border: 1px solid #2980b9;
-    border-radius: 4px;
-    margin-top: 20px; 
-    color: white; /* Cambiar color del texto a blanco */
-    font-weight: bold; /* Hacer el texto en negrita */
+.contenido button{
+    
 }
-
-

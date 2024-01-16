@@ -17,12 +17,12 @@ include('includes/conexion.php');
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>SIOB | Estudiantes</title>
+    <title>DIF | Usuarios registrados</title>
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <link href="assets/css/font-awesome.css" rel="stylesheet" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 
-    <link href="assets/css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/tarjeta-dist.css">
 </head>
 
 <body>
@@ -30,12 +30,9 @@ include('includes/conexion.php');
     <?php include('includes/header.php'); ?>
 
     <div class="container mt-4">
-        <h1 class="text-center mb-4">Estudiantes registrados</h1>
+        <h1 class="text-center mb-4">Usuarios registrados</h1>
 
-        <!-- Agregamos el formulario de búsqueda -->
-        <div class="form-group">
-            <input type="text" class="form-control" id="searchInput" placeholder="Buscar por nombre o correo">
-        </div>
+
 
         <div class="table-responsive">
             <table class="table table-bordered">
@@ -66,26 +63,10 @@ include('includes/conexion.php');
                 </tbody>
             </table>
         </div>
+        <div>
+            <a href="dashboard.php" class="btn btn-primary">Volver al panel de administrador</a>
+        </div>
     </div>
-
-    <!-- Bootstrap JS y jQuery (puedes cambiarlo según tus necesidades) -->
-    <!-- Script para filtrar los resultados de la tabla -->
-    <script>
-        $(document).ready(function() {
-            $('#searchInput').on('input', function() {
-                var searchTerm = $(this).val().toLowerCase();
-                $('tbody tr').each(function() {
-                    var fullName = $(this).find('td:first-child').text().toLowerCase();
-                    var email = $(this).find('td:nth-child(2)').text().toLowerCase();
-                    if (fullName.includes(searchTerm) || email.includes(searchTerm)) {
-                        $(this).show();
-                    } else {
-                        $(this).hide();
-                    }
-                });
-            });
-        });
-    </script>
 
 </body>
 
