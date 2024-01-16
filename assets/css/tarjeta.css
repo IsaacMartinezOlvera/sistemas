@@ -1,31 +1,37 @@
-.contenedor{
+.contenedor {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
- 
 }
 
-.tarjeta{
+.tarjeta {
     width: 80%; /* Cambiado a un porcentaje para que sea más grande en pantallas grandes */
     max-width: 600px; /* Establecer un ancho máximo */
     background-color: #f0f0f0;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-    margin-top: 20px;  
+    margin-top: 20px;
 }
 
-.tarjeta img{
+.tarjeta img {
     width: 100%;
     height: auto;
 }
 
-.contenido{
-    padding: 30px;
-
+.contenido {
+    padding: 30px; /* Aumentar el espacio de relleno */
 }
 
-.contenido button{
-    
+.contenido button {
+    display: inline-block;
+    padding: 16px 32px; /* Aumentar el tamaño del botón */
+    background-color: #3498db; /* Cambiar el color del botón */
+    text-decoration: none;
+    border: 1px solid #2980b9;
+    border-radius: 4px;
+    margin-top: 20px; /* Ajustar el margen superior */
+    color: white; /* Cambiar color del texto a blanco */
+    font-weight: bold; /* Hacer el texto en negrita */
 }
