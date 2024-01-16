@@ -16,12 +16,16 @@ include('includes/conexion.php');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DIF | </title>
+    <title>DIF | Añadir Coordianción </title>
+    <link rel="stylesheet" href="assets/css/tarjeta-dist.css">
+
 </head>
+
+
 <body>
 <?php include('includes/header.php'); ?>
 <form action="add_subcategory.php" method="POST">
-    <input type="text" name="category_name" placeholder="Añade el nombre de la categoria (dirección)">
+    <input type="text" name="nombre_subcategoria" placeholder="Añade el nombre de la categoria (dirección)">
     <input type="submit" value="Añadir">
 </form>
 

@@ -1,5 +1,4 @@
-<?php
-session_start();
+<?php session_start();
 
 if (!isset($_SESSION['tipo_usuario'])) {
     header('Location: index.php');
@@ -12,23 +11,32 @@ include('includes/conexion.php');
 if (isset($_POST['category_name'])) {
     $category_name = $_POST['category_name'];
 
-    // Check if the category name already exists
-    $query = "SELECT * FROM categorias WHERE FullName = '".$category_name."'";
-    $result = mysqli_query($conexion, $query);
+    // Verificar si el nombre de la categoría ya existe
+    $query_check = "SELECT * FROM categorias WHERE FullName = ?";
+    $stmt_check = mysqli_prepare($conexion, $query_check);
+    mysqli_stmt_bind_param($stmt_check, 's', $category_name);
+    mysqli_stmt_execute($stmt_check);
+    mysqli_stmt_store_result($stmt_check);
 
-    if (mysqli_num_rows($result) > 0) {
-        // Display an error message if the name already exists
-        echo "Error: The category name '".$category_name."' already exists.";
+    if (mysqli_stmt_num_rows($stmt_check) > 0) {
+        echo "La dirección '" . $category_name . "' ya existe.";
     } else {
-        // Insert the category into the database
-        $query = "INSERT INTO categorias (FullName, identificador) VALUES ('".$category_name."', 1)";
-        $result = mysqli_query($conexion, $query);
+        // Obtener el siguiente identificador disponible
+        $query_max_id = "SELECT MAX(identificador) AS max_id FROM categorias";
+        $result_max_id = mysqli_query($conexion, $query_max_id);
+        $row_max_id = mysqli_fetch_assoc($result_max_id);
+        $next_identifier = $row_max_id['max_id'] + 1;
 
-        if ($result) {
-            echo "Category added successfully!";
+        // Insertar la categoría en la base de datos con el identificador asignado
+        $query_insert = "INSERT INTO categorias (FullName, identificador) VALUES (?, ?)";
+        $stmt_insert = mysqli_prepare($conexion, $query_insert);
+        mysqli_stmt_bind_param($stmt_insert, 'si', $category_name, $next_identifier);
+        $result_insert = mysqli_stmt_execute($stmt_insert);
+
+        if ($result_insert) {
+            echo "Dirección '" . $category_name . "' agregada exitosamente!";
         } else {
-            echo "Error adding category: " . mysqli_error($conexion);
+            echo "Error al agregar la categoría: " . mysqli_error($conexion);
         }
     }
 }
-?>

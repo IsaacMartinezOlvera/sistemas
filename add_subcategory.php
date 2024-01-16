@@ -6,29 +6,39 @@ if (!isset($_SESSION['tipo_usuario'])) {
     exit();
 }
 
-$tipo_usuario = $_SESSION['tipo_usuario'];
-include('includes/conexion.php');
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "sistemas";
 
-if (isset($_POST['category_name'])) {
-    $category_name = $_POST['category_name'];
+    $conn = new mysqli($servername, $username, $password, $dbname);
 
-    // Check if the category name already exists
-    $query = "SELECT * FROM categorias WHERE FullName = '".$category_name."'";
-    $result = mysqli_query($conexion, $query);
-
-    if (mysqli_num_rows($result) > 0) {
-        // Display an error message if the name already exists
-        echo "Error: The category name '".$category_name."' already exists.";
-    } else {
-        // Insert the category into the database
-        $query = "INSERT INTO categorias (FullName, identificador) VALUES ('".$category_name."', 1)";
-        $result = mysqli_query($conexion, $query);
-
-        if ($result) {
-            echo "Category added successfully!";
-        } else {
-            echo "Error adding category: " . mysqli_error($conexion);
-        }
+    if ($conn->connect_error) {
+        die("Error en la conexión a la base de datos: " . $conn->connect_error);
     }
+
+    $nombre_subcategoria = $_POST['nombre_subcategoria'];
+
+    // Obtener el último identificador utilizado
+    $query_last_id = "SELECT MAX(identificador) AS last_id FROM subcategoria";
+    $result_last_id = $conn->query($query_last_id);
+    $row_last_id = $result_last_id->fetch_assoc();
+    $next_id = $row_last_id['last_id'] + 1;
+
+    // Insertar datos en la tabla subcategoria con el nuevo identificador
+    $sql = "INSERT INTO subcategoria (nombre_subcategoria, identificador) VALUES ('$nombre_subcategoria', $next_id)";
+
+    if ($conn->query($sql) === TRUE) {
+        header("Location: subcategoria.php");
+        exit();
+    } else {
+        echo "Error al guardar la subcategoría: " . $conn->error;
+    }
+
+    $conn->close();
+} else {
+    header("Location: categoria.php");
+    exit();
 }
 ?>

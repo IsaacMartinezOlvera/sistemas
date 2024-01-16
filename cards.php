@@ -21,7 +21,7 @@ include('includes/conexion.php');
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>SIOB</title>
+    <title>DIF | Selección de inventario</title>
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <link href="assets/css/font-awesome.css" rel="stylesheet" />
     <link href="assets/css/style.css" rel="stylesheet" />
@@ -97,7 +97,7 @@ include('includes/conexion.php');
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h2>Categorías</h2>
+                <h2>Selecciona el inventario al revisar</h2>
                 <div class="category-container">
                     <?php
                     // Conectarse a la base de datos (reemplaza con tus propios detalles)
@@ -122,8 +122,7 @@ include('includes/conexion.php');
                     while ($row = mysqli_fetch_assoc($result)) {
                         echo "<div class='category-card'>";
                         echo "<h3 style='margin-top: 50%;'>" . $row['Fullname'] . "</h3>";
-                        echo "<form action='eliminar_categoria.php' method='post' onsubmit='return confirm(\"¿Estás seguro de eliminar esta categoría?\")'>";
-                        echo "<button type='submit' class='btn btn-danger'>Acceder</button>";
+                        echo "<a href='libros.php?categoria=" . $row['CategoryName'] . "' class='btn btn-primary'>Ver la coordinación</a>";
 
                         echo "<input type='hidden' name='categoria_id' value='" . $row['id'] . "' />";
                         echo "</form>";
