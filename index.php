@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <title>DIF | Iniciar Sesión</title>
 </head>
 <body>
-    <h2>Login</h2>
+    <h2>Login para iniciar sesión</h2>
     <?php if (isset($mensaje_error)) { ?>
         <p style="color: red;"><?php echo $mensaje_error; ?></p>
     <?php } ?>
