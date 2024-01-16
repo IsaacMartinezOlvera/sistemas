@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="assets/css/tarjeta-dist.css">
 </head>
 <body>
-    <h2>Login para iniciar sesión</h2>
+    <!-- <h2>Login para iniciar sesión</h2> -->
     <?php if (isset($mensaje_error)) { ?>
         <p style="color: red;"><?php echo $mensaje_error; ?></p>
     <?php } ?>
@@ -52,14 +52,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <form method="post" action="">
                     <label for="usuario">Usuario:</label>
                     <input type="text" name="usuario" required>
-                    <br>
+                    
                     <label for="contrasena">Contraseña:</label>
-                    <input type="password" name="contrasena" required>
-                    <br>
+                    <input type="password" name="contrasena" id="passwordInput"  required>
+                    <input type="checkbox" id="togglePassword"> Mostrar contraseña
+                    
                     <button type="submit">Iniciar sesión</button>
                 </form>
             </div>
         </div>
     </div>
+
+    <script src="assets/js/contrasena.js"></script>
 </body>
 </html>

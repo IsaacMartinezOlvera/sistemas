@@ -1,19 +1,19 @@
-
 .contenedor {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 70vh;
 }
 
 .tarjeta {
-    width: 80%; /* Cambiado a un porcentaje para que sea más grande en pantallas grandes */
-    max-width: 600px; /* Establecer un ancho máximo */
+    width: 70%;
+    max-width: 300px;
     background-color: #f0f0f0;
-    border-radius: 8px;
+    border-radius: 6px;
     overflow: hidden;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-    margin-top: 20px;
+    margin-top: 15px;
 }
 
 .tarjeta img {
@@ -22,19 +22,38 @@
 }
 
 .contenido {
-    padding: 30px; /* Aumentar el espacio de relleno */
+    padding: 6px;
 }
 
-.contenido button {
-    display: inline-block;
-    padding: 16px 32px; /* Aumentar el tamaño del botón */
-    background-color: #3498db; /* Cambiar el color del botón */
-    text-decoration: none;
+.contenido form {
+    max-width: 200px;
+    margin: 0 auto;
+}
+
+.contenido label {
+    display: block;
+    margin-bottom: 2px;
+    color: #333;
+}
+
+.contenido input {
+    width: 100%;
+    padding: 4px;
+    margin-bottom: 4px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.contenido button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 6px;
+    background-color: #3498db;
+    color: white;
     border: 1px solid #2980b9;
-    border-radius: 4px;
-    margin-top: 20px; /* Ajustar el margen superior */
-    color: white; /* Cambiar color del texto a blanco */
-    font-weight: bold; /* Hacer el texto en negrita */
+    border-radius: 3px;
+    cursor: pointer;
 }
 .header {
     background-color: #333;
