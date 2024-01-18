@@ -1,6 +1,7 @@
 <?php
 // includes/header.php
 if ($tipo_usuario == 1) {
+    
     echo '<div id="header">';
     // Código del encabezado
     echo '<h1>Encabezado del Administrador</h1>';
@@ -18,4 +19,10 @@ if ($tipo_usuario == 1) {
 }
 
 ?>
+
+<!-- Agrega este enlace a Bootstrap antes de tu archivo de estilos personalizado -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+
+
  
