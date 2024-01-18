@@ -56,7 +56,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                     while ($row = mysqli_fetch_assoc($result)) {
                         echo "<div class='category-card'>";
                         echo "<h3 style='margin-top: 50%;'>" . $row['Fullname'] . "</h3>";
-                        echo "<a href='libros.php?categoria=" . $row['CategoryName'] . "' class='btn btn-primary'>Ver la coordinación</a>";
+                        echo "<a href='libros.php?categoria=" . $row['Fullname'] . "' class='btn btn-primary'>Ver la coordinación</a>";
 
                         echo "<input type='hidden' name='categoria_id' value='" . $row['id'] . "' />";
                         echo "</form>";
