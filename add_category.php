@@ -1,4 +1,5 @@
-<?php session_start();
+<?php
+session_start();
 
 if (!isset($_SESSION['tipo_usuario'])) {
     header('Location: index.php');
@@ -28,9 +29,11 @@ if (isset($_POST['category_name'])) {
         $next_identifier = $row_max_id['max_id'] + 1;
 
         // Insertar la categoría en la base de datos con el identificador asignado
-        $query_insert = "INSERT INTO categorias (FullName, identificador) VALUES (?, ?)";
+        $query_insert = "INSERT INTO categorias (FullName, identificador) 
+                         SELECT ?, ? FROM dual 
+                         WHERE NOT EXISTS (SELECT 1 FROM categorias WHERE FullName = ?)";
         $stmt_insert = mysqli_prepare($conexion, $query_insert);
-        mysqli_stmt_bind_param($stmt_insert, 'si', $category_name, $next_identifier);
+        mysqli_stmt_bind_param($stmt_insert, 'iss', $category_name, $next_identifier, $category_name);
         $result_insert = mysqli_stmt_execute($stmt_insert);
 
         if ($result_insert) {
@@ -40,3 +43,4 @@ if (isset($_POST['category_name'])) {
         }
     }
 }
+?>

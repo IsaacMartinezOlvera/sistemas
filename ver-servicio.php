@@ -7,7 +7,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-    <title>DIF | Coordinaciones</title>
+    <title>DIF | Servicios</title>
     <link rel="stylesheet" type="text/css" href="assets/css/tarjeta.css"> <!-- Agrega esta línea para incluir el CSS -->
 </head>
 
@@ -34,7 +34,7 @@
                     }
 
                     // Obtener el identificador de la categoría desde la URL
-                    $identificador_categoria = isset($_GET['identificador_categoria']) ? $_GET['identificador_categoria'] : null;
+                    $identificador_categoria = isset($_GET['identificador_subcategoria']) ? $_GET['identificador_subcategoria'] : null;
 
                     // Verificar si el parámetro está definido
                     if ($identificador_categoria !== null) {
@@ -42,7 +42,7 @@
                         $identificador_categoria = mysqli_real_escape_string($conn, $identificador_categoria);
 
                         // Obtener las subcategorías relacionadas con el identificador de la categoría
-                        $query = "SELECT * FROM subcategoria WHERE identificador_categoria = '$identificador_categoria'";
+                        $query = "SELECT * FROM subsub WHERE identificador_subcategoria = '$identificador_categoria'";
                         $result = mysqli_query($conn, $query);
 
                         // Verificar errores en la consulta
@@ -53,8 +53,8 @@
                         // Mostrar las subcategorías
                         while ($row = mysqli_fetch_assoc($result)) {
                             echo "<div class='subcategory-card'>";
-                            echo "<h3>" . $row['nombre_subcategoria'] . "</h3>";
-                            echo "<a href='ver-servicio.php?identificador_subcategoria=" . $row['identificador'] . "' class='btn btn-primary'>Ver los servicios</a>";
+                            echo "<h3>" . $row['nombre_subsub'] . "</h3>";
+                            echo "<a href='ver-servicios.php?identificador_subcategoria=" . $row['identificador'] . "' class='btn btn-primary'>Ver el inventario</a>";
                             echo "</div>";
                         }
                     } else {
