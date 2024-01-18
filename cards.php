@@ -1,5 +1,7 @@
 <?php
-session_start();
+// Mover la inclusión del archivo header.php antes de session_start()
+// include('includes/header.php');
+
 
 if (!isset($_SESSION['tipo_usuario'])) {
     header('Location: index.php');
@@ -7,9 +9,7 @@ if (!isset($_SESSION['tipo_usuario'])) {
 }
 
 $tipo_usuario = $_SESSION['tipo_usuario'];
-include('includes/conexion.php');
 ?>
-
 
 
 </html>
@@ -19,80 +19,14 @@ include('includes/conexion.php');
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <title>DIF | Selección de inventario</title>
-    <link href="assets/css/bootstrap.css" rel="stylesheet" />
-    <link href="assets/css/font-awesome.css" rel="stylesheet" />
-    <link href="assets/css/style.css" rel="stylesheet" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-    <style>
-        .category-card {
-            width: 300px;
-            height: 400px;
-            border: 1px solid #ccc;
-            padding: 10px;
-            margin: 10px;
-            float: left;
-            text-align: center;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-            transition: box-shadow 0.3s ease;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            color: white;
-            border-radius: 5px;
-        }
+    <link rel="stylesheet" type="text/css" href="assets/css/tarjeta.css"> <!-- Agrega esta línea para incluir el CSS -->
 
-        .category-card:hover {
-            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-        }
 
-        .category-card h3 {
-            font-size: 18px;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-        }
-
-        .category-card p {
-            font-size: 14px;
-            margin-bottom: 20px;
-        }
-
-        .category-card .btn {
-            display: inline-block;
-            margin-top: 10px;
-            margin-right: 5px;
-        }
-
-        .category-card img {
-            display: none;
-        }
-
-        body {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            margin-bottom: 100px;
-            /* Ajusta el margen inferior para el footer */
-        }
-
-        .content-wrapper {
-            flex: 1;
-        }
-
-        .footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #f8f9fa;
-            /* Ajusta el color de fondo según tus preferencias */
-        }
-    </style>
 </head>
 
 <body>
 
-    <?php include('includes/header.php'); ?>
 
     <div class="container">
         <div class="row">
