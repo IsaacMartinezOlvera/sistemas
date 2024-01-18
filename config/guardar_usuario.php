@@ -31,6 +31,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         exit();
     }
 
+    // Verificar si el correo electrónico ya está registrado
+    $consulta_email_existente = "SELECT * FROM usuarios WHERE EmailId = ?";
+    $stmt_email_existente = $conexion->prepare($consulta_email_existente);
+    $stmt_email_existente->bind_param("s", $email);
+    $stmt_email_existente->execute();
+    $result_email_existente = $stmt_email_existente->get_result();
+
+    if ($result_email_existente->num_rows > 0) {
+        $_SESSION['mensaje_error'] = "El correo electrónico ya está registrado. Por favor, utiliza otro.";
+        header('Location: ../registro_usuario.php');
+        exit();
+    }
+
+    $stmt_email_existente->close();
+
     // Hash de la contraseña (puedes utilizar algoritmos más seguros)
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
@@ -52,3 +67,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $conexion->close();
 }
 ?>
+
+<!-- Resto del código HTML -->
+
