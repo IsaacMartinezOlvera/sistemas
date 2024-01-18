@@ -28,5 +28,7 @@ if (isset($_SESSION['tipo_usuario']) && $_SESSION['tipo_usuario'] == 1) {
 
     echo '</div>';
     echo '</nav>';
+    
 }
 ?>
+<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">  -->

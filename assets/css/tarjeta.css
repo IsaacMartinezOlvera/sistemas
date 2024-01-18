@@ -124,6 +124,10 @@ body {
     background-color: #AAB7B8;
     padding: 15px;
 }
+.navbar a {
+    text-align: center;
+}
+
 
 .container-fluid {
     display: flex;
@@ -160,8 +164,8 @@ th, td {
 
 .btn-primary {
     color: #fff;
-    background-color: #428bca;
-    border-color: #357ebd;
+    background-color: #42c1af;
+    border-color: #000000;
 }
 
 .btn {

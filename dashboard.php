@@ -15,6 +15,8 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DIF | Inicio</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/tarjeta.css"> <!-- Agrega esta línea para incluir el CSS -->
+
     <?php include('includes/header.php'); ?>
 </head>
 <body>
