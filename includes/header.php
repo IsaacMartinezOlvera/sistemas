@@ -28,5 +28,8 @@ if (isset($_SESSION['tipo_usuario']) && $_SESSION['tipo_usuario'] == 1) {
 
     echo '</div>';
     echo '</nav>';
+
+    
 }
 ?>
+
