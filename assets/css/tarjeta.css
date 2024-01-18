@@ -5,59 +5,6 @@ body {
 
 /* ... (tu código CSS existente) ... */
 
-.category-card,
-.subcategory-card {
-    width: 70%;
-    max-width: 250px;
-    height: 200px;
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin: 10px auto; /* Auto margen en los lados para centrar horizontalmente */
-    text-align: center;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    transition: box-shadow 0.3s ease;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: white;
-    border-radius: 5px;
-    display: flex; /* Utiliza flexbox para centrar verticalmente el contenido */
-    flex-direction: column; /* Alinea el contenido en columna */
-    justify-content: space-between; /* Espacio uniforme entre elementos */
-}
-
-.category-card:hover,
-.subcategory-card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-}
-
-.category-card h3,
-.subcategory-card h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-}
-
-.category-card p,
-.subcategory-card p {
-    font-size: 14px;
-    margin-bottom: 20px;
-}
-
-.category-card .btn,
-.subcategory-card .btn {
-    display: block;
-    width: 100%;
-    margin-top: 10px;
-}
-
-.category-card img,
-.subcategory-card img {
-    display: none;
-}
-
-/* ... (tu código CSS existente) ... */
-
 .contenedor {
     display: flex;
     flex-direction: column;
@@ -89,7 +36,7 @@ body {
 }
 
 .category-card h3 {
-    font-size: 18px;
+    font-size: 28px;
     margin-bottom: 10px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
@@ -101,8 +48,8 @@ body {
 
 .category-card .btn {
     display: block;
-    width: 100%;
-    margin-top: 10px;
+    width: 89%;
+    margin-top: 105px;
 }
 
 .category-card img {
@@ -141,7 +88,7 @@ body {
 }
 
 .subcategory-card h3 {
-    font-size: 18px;
+    font-size: 22px;
     margin-bottom: 10px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
@@ -153,8 +100,8 @@ body {
 
 .subcategory-card .btn {
     display: block;
-    width: 100%;
-    margin-top: 10px;
+    width: 87%;
+    margin-top: 70px;
 }
 
 .subcategory-card img {
@@ -270,238 +217,6 @@ th, td {
 .content-wrapper {
     flex: 1;
     margin-left: 220px; /* Ajusta el margen izquierdo para dar espacio al menú lateral */
-}
-
-body {
-    margin: 0;
-    font-family: "Arial", sans-serif;
-}
-
-.contenedor {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 70vh;
-    margin-top: 20px;
-}
-
-.category-card,
-.subcategory-card {
-    width: 70%;
-    max-width: 250px;
-    height: 200px;
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin: 10px auto; /* Auto margen en los lados para centrar horizontalmente */
-    text-align: center;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    transition: box-shadow 0.3s ease;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: white;
-    border-radius: 5px;
-}
-
-.category-card:hover,
-.subcategory-card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-}
-
-.category-card h3,
-.subcategory-card h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-}
-
-.category-card p,
-.subcategory-card p {
-    font-size: 14px;
-    margin-bottom: 20px;
-}
-
-.category-card .btn,
-.subcategory-card .btn {
-    display: block;
-    width: 100%;
-    margin-top: 10px;
-}
-
-.category-card img,
-.subcategory-card img {
-    display: none;
-}
-
-.category-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-.category-card,
-.subcategory-card {
-    width: calc(33.33% - 20px); /* Ajusta el ancho para que haya tres tarjetas en una línea */
-    max-width: 250px;
-    height: 200px;
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin: 10px;
-    text-align: center;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    transition: box-shadow 0.3s ease;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: white;
-    border-radius: 5px;
-}
-
-.category-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around; /* Ajusta el espacio entre las tarjetas */
-    gap: 20px;
-}
-.category-card,
-.subcategory-card {
-    width: calc(33.33% - 20px); /* Ajusta el ancho para que haya tres tarjetas en una línea con espacio entre ellas */
-    max-width: 250px;
-    height: 200px;
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin: 10px auto; /* Auto margen en los lados para centrar horizontalmente */
-    text-align: center;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    transition: box-shadow 0.3s ease;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: white;
-    border-radius: 5px;
-}
-
-.category-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Centra las tarjetas horizontalmente */
-    gap: 20px; /* Añade un espacio de separación entre las tarjetas */
-}
-.category-card h3,
-.subcategory-card h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-    text-align: center; /* Centra el texto horizontalmente */
-}
-
-.category-card .btn,
-.subcategory-card .btn {
-    display: block;
-    width: 70%; /* Ajusta el ancho del botón según tus preferencias */
-    margin: 0 auto; /* Auto margen en los lados para centrar horizontalmente */
-    margin-top: 10px;
-}
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Open Sans', sans-serif;
-}
-
-.container {
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-.row {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-h2 {
-    text-align: center;
-    margin-top: 20px; /* Ajusta según sea necesario */
-}
-
-.category-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
-}
-
-.category-card {
-    text-align: center;
-    margin: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-}
-
-h3 {
-    margin-top: 0;
-}
-
-.btn {
-    margin-top: auto; /* Siempre en la parte inferior */
-}
-body {
-    margin: 0;
-    font-family: 'Open Sans', sans-serif;
-}
-
-.container {
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-h2 {
-    text-align: center;
-    margin-top: 20px; /* Ajusta según sea necesario */
-}
-
-.category-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
-}
-
-.category-card {
-    text-align: center;
-    margin: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.card-title {
-    font-size: 18px;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-    text-align: center;
-}
-
-.card-btn {
-    display: block;
-    width: 70%;
-    margin: 0 auto;
-    margin-top: 10px;
-}
-
-.footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #f8f9fa;
 }
 
 /* Resto de tu código CSS original */
