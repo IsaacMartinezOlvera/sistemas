@@ -35,6 +35,12 @@ include('includes/conexion.php');
     <h2>Registrar Nuevo Usuario</h2>
 
     <?php
+    //!los campos deben llenarse
+    if (isset($_SESSION['mensaje_error'])) {
+        echo '<p class="mensaje_llenar">' . $_SESSION['mensaje_error'] . '</p>';
+        // Limpia el mensaje de error para que no se muestre en futuras visitas
+        unset($_SESSION['mensaje_error']);
+    }
     // Verifica si existe la variable de sesión y si es true
     if (isset($_SESSION['registro_exitoso']) && $_SESSION['registro_exitoso']) {
     echo '<p class="mensaje_exitoso">¡Registro exitoso! Se ha registrado correctamente.</p>';
@@ -44,20 +50,20 @@ include('includes/conexion.php');
     ?>
 
     <!-- Formulario para registrar un nuevo usuario -->
-    <form method="post" action="config/guardar_usuario.php">
+    <form method="post" action="config/guardar_usuario.php" onsubmit="return validarFormulario()">
         <label for="nombre">Nombre:</label>
-        <input type="text" name="nombre" >
+        <input type="text" name="nombre"  id="nombre" required>
 
         <label for="nombre">Correo electronico:</label>
-        <input type="text" name="email" >
+        <input type="text" name="email" id="email" require>
 
 
         <br>
         <label for="password">Contraseña:</label>
-        <input type="password" name="password" >
+        <input type="password" name="password" id="password" require>
         <br>
         <label for="tipo_usuario">Tipo de Usuario:</label>
-        <select name="tipo_usuario" >
+        <select name="tipo_usuario" id="tipo_usuario"  required>
             <option value="1">Administrador</option>
             <option value="2">Usuario</option>
         </select>
@@ -67,6 +73,8 @@ include('includes/conexion.php');
 
     <br>
     <a href="dashboard.php">Volver al Dashboard</a>
+
+    <script src="assets/js/validacion.js"></script>
 </body>
 
 </html>
