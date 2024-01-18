@@ -1,7 +1,7 @@
 <?php
 // Mover la inclusión del archivo header.php antes de session_start()
-// include('includes/header.php');
 
+// include('includes/header.php');
 
 if (!isset($_SESSION['tipo_usuario'])) {
     header('Location: index.php');
@@ -11,8 +11,6 @@ if (!isset($_SESSION['tipo_usuario'])) {
 $tipo_usuario = $_SESSION['tipo_usuario'];
 ?>
 
-
-</html>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -21,13 +19,10 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
     <link rel="stylesheet" type="text/css" href="assets/css/tarjeta.css"> <!-- Agrega esta línea para incluir el CSS -->
-
-
+    
 </head>
 
 <body>
-
-
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -47,22 +42,18 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                         die("Conexión fallida: " . mysqli_connect_error());
                     }
 
-                    // Obtener todas las categorías de la tabla tblcategory
+                    // Obtener todas las categorías de la tabla categorias
                     $query = "SELECT * FROM categorias";
                     $result = mysqli_query($conn, $query);
 
                     // Mostrar las categorías en tarjetas de título
-                    // Mostrar las categorías en tarjetas de título
                     while ($row = mysqli_fetch_assoc($result)) {
                         echo "<div class='category-card'>";
                         echo "<h3 style='margin-top: 50%;'>" . $row['Fullname'] . "</h3>";
-                        echo "<a href='libros.php?categoria=" . $row['Fullname'] . "' class='btn btn-primary'>Ver la coordinación</a>";
-
-                        echo "<input type='hidden' name='categoria_id' value='" . $row['id'] . "' />";
-                        echo "</form>";
+                        echo "<a href='ver-subcategoria.php?identificador_categoria=" . $row['identificador'] . "' class='btn btn-primary'>Ver la coordinación</a>";
+                        echo "<input type='hidden' name='categoria_id' value='" . $row['identificador'] . "' />";
                         echo "</div>";
                     }
-
 
                     // Cerrar la conexión
                     mysqli_close($conn);
@@ -70,9 +61,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                 </div>
             </div>
         </div>
-
     </div>
-
 </body>
 
 </html>
