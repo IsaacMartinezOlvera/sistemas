@@ -377,7 +377,7 @@ h2 {
 } 
 
 .navbar {
-    background-color: #2980b9;
+    background-color: #389de0;
     padding: 15px;
 }
 
@@ -391,19 +391,19 @@ h2 {
 #logo {
     width: 80px;
     height: auto;
-    margin-right: 10px;
+    margin-right: 40px;
     position: fixed;
     position: inherit;
 }
 
 .container-fluid a {
-    color: #90e0ef;
+    color: #ceef90;
     text-decoration: none;
-    margin-right: 20px; /* Ajusta el margen derecho para aumentar la separación */
+    margin-right: 70px; /* Ajusta el margen derecho para aumentar la separación */
 }
 
 .container-fluid a:hover {
-    color: #3498db;
+    color: #23794d;
 }
 table {
     width: 100%;
@@ -491,4 +491,181 @@ body {
     padding: 10px;
     background-color: #f8f9fa;
     /* Ajusta el color de fondo según tus preferencias */
+}
+/* assets/css/tarjeta.css */
+
+.category-card {
+    width: 300px;
+    height: 400px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    float: left;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    border-radius: 5px;
+}
+
+.category-card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}A
+
+.category-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.category-card p {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.category-card .btn {
+    display: block; /* Cambia 'inline-block' a 'block' para que cada botón esté en una nueva línea */
+    width: 100%; /* Ajusta el ancho para ocupar el 100% del contenedor */
+    margin-top: 10px;
+}
+
+.category-card img {
+    display: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin-bottom: 100px;
+}
+
+.content-wrapper {
+    flex: 1;
+}
+
+.footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #f8f9fa;
+}
+.select {
+    position: relative;
+    left: -20px;
+  
+}
+.label {
+    text-align: center;
+}
+.category-card .btn {
+    margin-top: 10px;
+    margin-right: 5px;
+}
+.category-card .btn {
+    margin-top: 10px;
+}
+.category-card .btn {
+    display: inline-block;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #428bca;
+    border-color: #357ebd;
+}
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+a {
+    color: #428bca;
+    text-decoration: none;
+}
+a {
+    background: transparent;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+hoja de estilo del agente de usuario
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: underline;
+}
+.category-card {
+    width: 300px;
+    height: 400px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    float: left;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    border-radius: 5px;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 28px;
+}
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #fff;
+}
+:host, :root {
+    --fa-style-family-classic: "Font Awesome 6 Free";
+    --fa-font-solid: normal 900 1em/1 "Font Awesome 6 Free";
+}
+:host, :root {
+    --fa-font-regular: normal 400 1em/1 "Font Awesome 6 Free";
+}
+:host, :root {
+    --fa-style-family-brands: "Font Awesome 6 Brands";
+    --fa-font-brands: normal 400 1em/1 "Font Awesome 6 Brands";
+}
+html {
+    font-size: 10px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+html {
+    font-family: sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+*:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+*:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
