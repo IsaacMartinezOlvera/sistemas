@@ -13,15 +13,8 @@ include('includes/conexion.php');
 <html lang="es">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
     <title>DIF | Usuarios registrados</title>
-    <link href="assets/css/bootstrap.css" rel="stylesheet" />
-    <link href="assets/css/font-awesome.css" rel="stylesheet" />
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-
+    <link href="assets/css/tarjeta.css">
     <link rel="stylesheet" href="assets/css/tarjeta-dist.css">
 </head>
 

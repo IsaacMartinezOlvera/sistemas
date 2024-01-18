@@ -1,5 +1,7 @@
 <?php
-session_start();
+// Mover la inclusión del archivo header.php antes de session_start()
+// include('includes/header.php');
+
 
 if (!isset($_SESSION['tipo_usuario'])) {
     header('Location: index.php');
@@ -7,9 +9,7 @@ if (!isset($_SESSION['tipo_usuario'])) {
 }
 
 $tipo_usuario = $_SESSION['tipo_usuario'];
-include('includes/conexion.php');
 ?>
-
 
 
 </html>
@@ -19,12 +19,6 @@ include('includes/conexion.php');
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <title>DIF | Selección de inventario</title>
-    <link href="assets/css/bootstrap.css" rel="stylesheet" />
-    <link href="assets/css/font-awesome.css" rel="stylesheet" />
-    <link href="assets/css/style.css" rel="stylesheet" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
     <style>
         .category-card {
@@ -92,7 +86,6 @@ include('includes/conexion.php');
 
 <body>
 
-    <?php include('includes/header.php'); ?>
 
     <div class="container">
         <div class="row">

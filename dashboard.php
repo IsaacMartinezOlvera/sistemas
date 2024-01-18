@@ -14,15 +14,13 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>DIF | Inicio</title>
     <?php include('includes/header.php'); ?>
 </head>
 <body>
-    <h2>Dashboard</h2>
 
     <?php if ($tipo_usuario == 1) { ?>
-        <p>Bienvenido, administrador.</p>
-        <!-- Contenido específico para administradores -->
+        <?php include('cards.php'); ?>
         <!-- <a href="registro_usuario.php">Registrar Usuario</a> -->
     <?php } elseif ($tipo_usuario == 2) { ?>
         <p>Bienvenido, usuario.</p>
