@@ -4,12 +4,7 @@ session_start();
 
 
 
-// Verifica si existe la variable de sesión y si es true
-if (isset($_SESSION['registro_exitoso']) && $_SESSION['registro_exitoso']) {
-    echo '<p class="alert alert-success">¡Registro exitoso! Se ha registrado correctamente.</p>';
-    // Limpia la variable de sesión para evitar mostrar el mensaje nuevamente en futuras visitas
-    unset($_SESSION['registro_exitoso']);
-}
+
 
 
 //!para dectectar el tipo de usuario
@@ -35,25 +30,34 @@ include('includes/conexion.php');
 </head>
 
 <body>
-<?php include('includes/header.php'); ?>
+    <?php include('includes/header.php'); ?>
 
     <h2>Registrar Nuevo Usuario</h2>
+
+    <?php
+    // Verifica si existe la variable de sesión y si es true
+    if (isset($_SESSION['registro_exitoso']) && $_SESSION['registro_exitoso']) {
+    echo '<p class="mensaje_exitoso">¡Registro exitoso! Se ha registrado correctamente.</p>';
+    // Limpia la variable de sesión para evitar mostrar el mensaje nuevamente en futuras visitas
+    unset($_SESSION['registro_exitoso']);
+    }
+    ?>
 
     <!-- Formulario para registrar un nuevo usuario -->
     <form method="post" action="config/guardar_usuario.php">
         <label for="nombre">Nombre:</label>
-        <input type="text" name="nombre" required>
+        <input type="text" name="nombre" >
 
         <label for="nombre">Correo electronico:</label>
-        <input type="text" name="email" required>
+        <input type="text" name="email" >
 
 
         <br>
         <label for="password">Contraseña:</label>
-        <input type="password" name="password" required>
+        <input type="password" name="password" >
         <br>
         <label for="tipo_usuario">Tipo de Usuario:</label>
-        <select name="tipo_usuario" required>
+        <select name="tipo_usuario" >
             <option value="1">Administrador</option>
             <option value="2">Usuario</option>
         </select>

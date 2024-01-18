@@ -1,5 +1,9 @@
 /* *para mostrar mensajes */
-
-.mensaje{
-    color: #28B463;
+.mensaje_exitoso {
+    background-color: #239B56;
+    border: 1px solid #239B56;
+    color: #333; /* Texto más oscuro */
+    font-weight: bold; /* Texto en negrita */
+    padding: 15px;
+    margin-top: 20px;
 }
