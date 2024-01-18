@@ -3,290 +3,20 @@ body {
     font-family: "Arial", sans-serif;
 }
 
+/* ... (tu código CSS existente) ... */
+
 .contenedor {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 70vh;
+    margin-top: 20px; /* Agregado espacio entre las tarjetas */
 }
 
-.tarjeta {
+.category-card {
     width: 70%;
-    max-width: 300px;
-    background-color: #f0f0f0;
-    border-radius: 6px;
-    overflow: hidden;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-    margin-top: 15px;
-}
-
-.tarjeta img {
-    width: 100%;
-    height: auto;
-}
-
-.contenido {
-    padding: 6px;
-}
-
-.contenido form {
-    max-width: 200px;
-    margin: 0 auto;
-}
-
-.contenido label {
-    display: block;
-    margin-bottom: 2px;
-    color: #333;
-}
-
-.contenido input {
-    width: 100%;
-    padding: 4px;
-    margin-bottom: 4px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-}
-
-.contenido button[type="submit"] {
-    display: block;
-    width: 100%;
-    padding: 6px;
-    background-color: #3498db;
-    color: white;
-    border: 1px solid #2980b9;
-    border-radius: 3px;
-    cursor: pointer;
-}
-
-.header,
-#header {
-    background-color: #1A535C;
-    color: white;
-    padding: 10px;
-}
-
-.header h1,
-#header h1 {
-    margin: 0;
-    padding: 0;
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.header a,
-#header a {
-    color: #fff;
-    text-decoration: none;
-    margin-right: 10px;
-}
-
-.header a:hover,
-#header a:hover {
-    text-decoration: underline;
-}
-
-#header {
-    text-align: center;
-    position: fixed;
-    height: 100%;
-    width: 200px;
-    /* Ancho del menú lateral */
-    left: 0;
-    top: 0;
-    overflow-x: hidden;
-    transition: 0.5s;
-}
-
-#header h1 {
-    margin-bottom: 20px;
-}
-
-#header a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 18px;
-    color: #90e0ef;
-    display: block;
-    transition: 0.3s;
-}
-
-#header a:hover {
-    color: #ffd166;
-}
-
-#header a:first-child {
-    margin-top: 15px;
-    /* Espacio adicional para el primer enlace */
-}
-
-#logo {
-    max-width: 100%;
-    height: auto;
-    max-height: 100px;
-    margin: 0 auto;
-    display: block;
-}
-
-#header a.button {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 18px;
-    color: #ffd166;
-    display: block;
-    transition: 0.3s;
-    background-color: #ffd166;
-    /* Color de fondo para los botones */
-}
-
-#header a.button:hover {
-    color: #ffd166;
-}
-
-#header a.button:first-child {
-    margin-top: 15px;
-    /* Espacio adicional para el primer enlace */
-}
-
-.category-card {
-    width: 300px;
-    height: 400px;
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin: 10px;
-    float: right;
-    text-align: right;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    transition: box-shadow 0.3s ease;
-    background-position: right;
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: white;
-    border-radius: 5px;
-}
-
-.category-card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-}
-
-.category-card h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-}
-
-.category-card p {
-    font-size: 14px;
-    margin-bottom: 20px;
-}
-
-.category-card .btn {
-    display: inline-block;
-    margin-top: 10px;
-    margin-right: 5px;
-}
-
-.category-card img {
-    display: none;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    margin-bottom: 100px;
-    /* Ajusta el margen inferior para el footer */
-}
-
-.content-wrapper {
-    flex: 1;
-}
-
-.footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #f8f9fa;
-    /* Ajusta el color de fondo según tus preferencias */
-}
-
-.category-card {
-    width: 300px;
-    height: 400px;
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin: 10px;
-    float: left;
-    text-align: center;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    transition: box-shadow 0.3s ease;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: white;
-    border-radius: 5px;
-}
-
-.category-card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-}
-
-.category-card h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-}
-
-.category-card p {
-    font-size: 14px;
-    margin-bottom: 20px;
-}
-
-.category-card .btn {
-    display: inline-block;
-    margin-top: 10px;
-    margin-right: 5px;
-}
-
-.category-card img {
-    display: none;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    margin-bottom: 100px;
-    /* Ajusta el margen inferior para el footer */
-}
-
-.content-wrapper {
-    flex: 1;
-}
-
-.footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #f8f9fa;
-    /* Ajusta el color de fondo según tus preferencias */
-}
-
-body {
-    margin: 0;
-    font-family: "Arial", sans-serif;
-}
-
-.contenedor {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 70vh;
-}
-
-.category-card {
-    width: 300px;
+    max-width: 250px;
     height: 400px;
     border: 1px solid #ccc;
     padding: 10px;
@@ -306,7 +36,7 @@ body {
 }
 
 .category-card h3 {
-    font-size: 18px;
+    font-size: 28px;
     margin-bottom: 10px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
@@ -317,20 +47,13 @@ body {
 }
 
 .category-card .btn {
-    display: inline-block;
-    margin-top: 10px;
-    margin-right: 5px;
+    display: block;
+    width: 89%;
+    margin-top: 105px;
 }
 
 .category-card img {
     display: none;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    margin-bottom: 100px;
 }
 
 .content-wrapper {
@@ -343,38 +66,55 @@ body {
     background-color: #f8f9fa;
 }
 
-/* Agregar un poco de espacio entre las tarjetas */
-.contenedor {
-    margin-top: 20px;
-}
-
-/* Ajustar el tamaño máximo de las tarjetas */
-.category-card {
+.subcategory-card {
     width: 70%;
-    max-width: 230px;
+    max-width: 250px;
+    height: 200px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    border-radius: 5px;
 }
 
-/* Tus estilos existentes */
+.subcategory-card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
 
-/* Agregar un poco de espacio entre las tarjetas */
+.subcategory-card h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.subcategory-card p {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.subcategory-card .btn {
+    display: block;
+    width: 87%;
+    margin-top: 70px;
+}
+
+.subcategory-card img {
+    display: none;
+}
+
+/* Agregado espacio entre las tarjetas */
 .category-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
 }
-
-/* Ajustar el tamaño máximo de las tarjetas */
-.category-card {
-    width: 70%;
-    max-width: 250px;
-    /* Otros estilos de .category-card aquí ... */
-}
-
-/* Otros estilos existentes */
-h2 {
-    text-align: center;
-} 
 
 .navbar {
     background-color: #389de0;
@@ -385,7 +125,7 @@ h2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-left: 100px; /* Ajusta el margen izquierdo según tus necesidades */
+    margin-left: 100px;
 }
 
 #logo {
@@ -393,188 +133,33 @@ h2 {
     height: auto;
     margin-right: 40px;
     position: fixed;
-    position: inherit;
 }
 
 .container-fluid a {
     color: #ceef90;
     text-decoration: none;
-    margin-right: 70px; /* Ajusta el margen derecho para aumentar la separación */
+    margin-right: 70px;
 }
 
 .container-fluid a:hover {
     color: #23794d;
 }
+
 table {
     width: 100%;
     text-align: center;
- }
- th, td {
+}
+
+th, td {
     width: 25%;
- }
- 
- btn btn-primary{
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  
- }
- btn btn-primary:hover{
-    background-color: #45a049;
-
- }
- btn btn-primary:active{
-    background-color: #45a049;
-
- }
-
- 
- .category-card {
-    width: 300px;
-    height: 400px;
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin: 10px;
-    float: left;
-    text-align: center;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    transition: box-shadow 0.3s ease;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: white;
-    border-radius: 5px;
 }
 
-.category-card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-}
-
-.category-card h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-}
-
-.category-card p {
-    font-size: 14px;
-    margin-bottom: 20px;
-}
-
-.category-card .btn {
-    display: inline-block;
-    margin-top: 10px;
-    margin-right: 5px;
-}
-
-.category-card img {
-    display: none;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    margin-bottom: 100px;
-    /* Ajusta el margen inferior para el footer */
-}
-
-.content-wrapper {
-    flex: 1;
-}
-
-.footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #f8f9fa;
-    /* Ajusta el color de fondo según tus preferencias */
-}
-/* assets/css/tarjeta.css */
-
-.category-card {
-    width: 300px;
-    height: 400px;
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin: 10px;
-    float: left;
-    text-align: center;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    transition: box-shadow 0.3s ease;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: white;
-    border-radius: 5px;
-}
-
-.category-card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-}A
-
-.category-card h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-}
-
-.category-card p {
-    font-size: 14px;
-    margin-bottom: 20px;
-}
-
-.category-card .btn {
-    display: block; /* Cambia 'inline-block' a 'block' para que cada botón esté en una nueva línea */
-    width: 100%; /* Ajusta el ancho para ocupar el 100% del contenedor */
-    margin-top: 10px;
-}
-
-.category-card img {
-    display: none;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    margin-bottom: 100px;
-}
-
-.content-wrapper {
-    flex: 1;
-}
-
-.footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #f8f9fa;
-}
-.select {
-    position: relative;
-    left: -20px;
-  
-}
-.label {
-    text-align: center;
-}
-.category-card .btn {
-    margin-top: 10px;
-    margin-right: 5px;
-}
-.category-card .btn {
-    margin-top: 10px;
-}
-.category-card .btn {
-    display: inline-block;
-}
 .btn-primary {
     color: #fff;
     background-color: #428bca;
     border-color: #357ebd;
 }
+
 .btn {
     display: inline-block;
     padding: 6px 12px;
@@ -594,78 +179,44 @@ body {
     border: 1px solid transparent;
     border-radius: 4px;
 }
-a {
-    color: #428bca;
-    text-decoration: none;
+
+.select {
+    position: relative;
+    left: -20px;
 }
-a {
-    background: transparent;
-}
-* {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-hoja de estilo del agente de usuario
-a:-webkit-any-link {
-    color: -webkit-link;
-    cursor: pointer;
-    text-decoration: underline;
-}
-.category-card {
-    width: 300px;
-    height: 400px;
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin: 10px;
-    float: left;
+
+.label {
     text-align: center;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    transition: box-shadow 0.3s ease;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: white;
-    border-radius: 5px;
 }
-body {
-    font-family: 'Open Sans', sans-serif;
-    line-height: 28px;
+#header {
+    text-align: left;
+    position: fixed;
+    height: 100%;
+    width: 220px; /* Ajusta el ancho del menú lateral para dar espacio al logo */
+    left: 0;
+    top: 0;
+    overflow-x: hidden;
+    transition: 0.5s;
 }
-body {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    line-height: 1.42857143;
-    color: #333;
-    background-color: #fff;
+
+#logo {
+    max-width: 100%;
+    height: auto;
+    max-height: 100px;
+    margin: 0 auto;
+    display: block;
+}#logo {
+    width: 80px;
+    height: auto;
+    margin-right: 40px;
+    position: fixed;
+    position: inherit;
 }
-:host, :root {
-    --fa-style-family-classic: "Font Awesome 6 Free";
-    --fa-font-solid: normal 900 1em/1 "Font Awesome 6 Free";
+
+
+.content-wrapper {
+    flex: 1;
+    margin-left: 220px; /* Ajusta el margen izquierdo para dar espacio al menú lateral */
 }
-:host, :root {
-    --fa-font-regular: normal 400 1em/1 "Font Awesome 6 Free";
-}
-:host, :root {
-    --fa-style-family-brands: "Font Awesome 6 Brands";
-    --fa-font-brands: normal 400 1em/1 "Font Awesome 6 Brands";
-}
-html {
-    font-size: 10px;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-html {
-    font-family: sans-serif;
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-}
-*:before, *:after {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-*:before, *:after {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
+
+/* Resto de tu código CSS original */

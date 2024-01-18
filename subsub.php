@@ -37,7 +37,6 @@
         echo "Subcategorías asociadas: " . implode(", ", $subcategorias) . "<br>";
     }
 
-    // ...
     ?>
 
     <!DOCTYPE html>
@@ -91,7 +90,6 @@
                 <label>Coordinación<span style="color:red;">*</span></label>
                 <select name="subcategoria" class="form-control">
                     <?php
-                    // Conectar a la base de datos (puedes considerar incluir esta parte en el archivo de conexión)
                     $conn = mysqli_connect($servername, $username, $password, $dbname);
 
                     if (!$conn) {
@@ -111,7 +109,6 @@
                     mysqli_close($conn);
                     ?>
                 </select>
-
                 <!-- Campos ocultos para almacenar identificadores -->
                 <input type="hidden" name="identificador_categoria" id="identificador_categoria" value="">
                 <input type="hidden" name="identificador_subcategoria" id="identificador_subcategoria" value="">
@@ -123,8 +120,22 @@
     <script>
         function actualizarSubcategorias(selectElement) {
             var identificadorCategoria = selectElement.options[selectElement.selectedIndex].getAttribute('data-identificador');
-            var subcategoriaSelect = document.querySelector("select[name='nombre_subcategoria']");
-            subcategoriaSelect.innerHTML = '';
+            var subcategoriaSelect = document.getElementById('subcategoriaSelect');
+            subcategoriaSelect.innerHTML = ''; // Limpiar las opciones existentes
+
+            // Obtener las subcategorías asociadas al identificador de la categoría seleccionada
+            fetch('get_subcategorias.php?identificador_categoria=' + identificadorCategoria)
+                .then(response => response.json())
+                .then(subcategorias => {
+                    subcategorias.forEach(subcategoria => {
+                        var option = document.createElement('option');
+                        option.value = subcategoria;
+                        option.text = subcategoria;
+                        subcategoriaSelect.add(option);
+                    });
+                });
+
+            // Actualizar el campo oculto con el identificador de la categoría
             document.getElementById('identificador_categoria').value = identificadorCategoria;
         }
     </script>
