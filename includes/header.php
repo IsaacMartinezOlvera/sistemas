@@ -21,6 +21,7 @@ if (isset($_SESSION['tipo_usuario']) && $_SESSION['tipo_usuario'] == 1) {
     echo '<a href="categoria.php">Registrar dirección</a>';
     echo '<a href="subcategoria.php">Registrar coordinación</a>';
     echo '<a href="subsub.php">Registrar un servicio</a>';
+    echo '<a href="crud.php">Resguardos dif</a>';
 
     // Código de búsqueda (comentado)
     // echo ' <form class="d-flex" role="search">
