@@ -36,14 +36,14 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
             <label for="">Consecutivo No:</label>
             <input type="text" name="consecutivo" id="">
 
-            
+
         </div>
 
         <div class="grupo">
             <label for="">Área Resguardante:</label>
             <input type="text" name="area" id="">
 
-           
+
         </div>
 
         <div class="grupo">
@@ -68,11 +68,33 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
         <div class="grupo">
             <label for="">Modelo:</label>
-            <input type="text" name="marca" id="">
+            <input type="text" name="modelo" id="">
         </div>
 
+        <div class="grupo">
+            <label for="">NO. De Serie:</label>
+            <input type="text" name="serie" id="">
+        </div>
+
+        <div class="grupo">
+            <label for="">Color:</label>
+            <input type="text" name="color" id="">
+        </div>
+
+        <div class="grupo">
+            <label for="">Usuario Responsable:</label>
+            <input type="text" name="usuario" id="">
+        </div>
+
+        <!-- me quede aqui -->
+        <div class="grupo">
+            <label for="">Observaciones:</label>
+            <input type="text" name="usuario" id="">
+        </div>
+
+
         <div>
-        <button name="submit">Registrar</button>
+            <button name="submit">Registrar</button>
         </div>
     </form>
 

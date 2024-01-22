@@ -18,6 +18,10 @@ if (isset($_POST['submit'])) {
     $descripcion = mysqli_real_escape_string($conexion, $_POST['descripcion']);
     $caracteristicas = mysqli_real_escape_string($conexion,$_POST['caracteristicas']);
     $marca = mysqli_real_escape_string($conexion,$_POST['marca']);
+    $modelo = mysqli_real_escape_string($conexion,$_POST['modelo']);
+    $serie = mysqli_real_escape_string($conexion,$_POST['serie']);
+    $color = mysqli_real_escape_string($conexion,$_POST['color']);
+    $usuario = mysqli_real_escape_string($conexion,$_POST['usuario']);
 
 
     // Obtener y validar la información de la imagen
@@ -54,13 +58,13 @@ if (isset($_POST['submit'])) {
 
 
     // Preparar la consulta con una sentencia preparada
-    $query = "INSERT INTO inventario(consecutivo_No, area, imagen,	descripcion,caracteristicas,marca) VALUES (?, ?, ?,?,?,?)";
+    $query = "INSERT INTO inventario(consecutivo_No, area, imagen,	descripcion,caracteristicas,marca,modelo,No_de_serie,color,nombre_de_usuario) VALUES (?, ?, ?,?,?,?,?,?,?,?)";
 
     // Inicializar la sentencia preparada
     $stmt = mysqli_prepare($conexion, $query);
 
     // Vincular los parámetros
-    mysqli_stmt_bind_param($stmt, "ssssss", $consecutivo, $area, $foto, $descripcion,$caracteristicas,$marca);
+    mysqli_stmt_bind_param($stmt, "ssssssssss", $consecutivo, $area, $foto, $descripcion,$caracteristicas,$marca,$modelo,$serie,$color,$usuario);
 
     // Ejecutar la sentencia preparada
     $funciona = mysqli_stmt_execute($stmt);
