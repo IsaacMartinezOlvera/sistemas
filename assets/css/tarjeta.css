@@ -87,6 +87,63 @@ body {
     border-radius: 5px;
 }
 
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+.tarjeta.contenido {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.tarjeta.contenido label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.tarjeta.contenido input,
+.tarjeta.contenido select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.tarjeta.contenido .btn-regresar {
+    margin-top: 20px;
+}
+
+/* Estilos adicionales para mejorar la apariencia del formulario */
+.tarjeta.contenido select {
+    cursor: pointer;
+}
+
+.tarjeta.contenido input[type="submit"] {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.tarjeta.contenido input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Añadir estilos para el encabezado si es necesario */
+/* .header {
+background-color: #333;
+color: #fff;
+padding: 10px;
+text-align: center;
+} */
+
 .subcategory-card:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
