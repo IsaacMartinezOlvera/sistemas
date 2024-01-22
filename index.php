@@ -17,6 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Verificar la contraseña hasheada
         if (password_verify($contrasena, $fila['Passwo'])) {
             $_SESSION['tipo_usuario'] = $fila['Puesto'];
+            $_SESSION['categoria_usuario'] = $fila['NombreCategoria']; // Nueva línea
             header('Location: dashboard.php');
             exit();
         } else {
@@ -41,7 +42,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 <body>
     
-    <!-- <h2>Login para iniciar sesión</h2> -->
     <?php if (isset($mensaje_error)) { ?>
         <p style="color: red;"><?php echo $mensaje_error; ?></p>
     <?php } ?>
