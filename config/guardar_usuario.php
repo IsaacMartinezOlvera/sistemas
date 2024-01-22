@@ -77,14 +77,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
     // Consulta SQL parametrizada para prevenir inyecciones SQL
-    $consulta = "INSERT INTO usuarios (FullName, Passwo, Puesto, EmailId, NombreCategoria) VALUES (?, ?, ?, ?, ?)";
+    $consulta = "INSERT INTO usuarios (FullName, Passwo, Puesto, EmailId, NombreCategoria, TipoRegistro) VALUES (?, ?, ?, ?, ?, ?)";
     $stmt = $conexion->prepare($consulta);
 
     // Manejo de errores para la preparación de la consulta
     if (!$stmt) {
         die('Error en la preparación de la consulta: ' . $conexion->error);
     }
-        $stmt->bind_param("ssiss", $nombre, $hashed_password, $tipo_usuario, $email, $nombre_subsub);
+
+    // Asignar parámetros y ejecutar la consulta
+    $stmt->bind_param("ssisss", $nombre, $hashed_password, $tipo_usuario, $email, $nombre_subsub, $tipo_registro);
 
     // Mostrar un mensaje si se registró correctamente
     if ($stmt->execute()) {

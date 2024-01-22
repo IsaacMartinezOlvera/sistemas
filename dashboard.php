@@ -26,7 +26,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
         <!-- <a href="registro_usuario.php">Registrar Usuario</a> -->
     <?php } elseif ($tipo_usuario == 2) { ?>
         <p>Bienvenido, usuario.</p>
-        <!-- Contenido específico para usuarios -->
+        <?php include('cards.php'); ?>
     <?php } ?>
 
     <a href="logout.php">Cerrar sesión</a>
