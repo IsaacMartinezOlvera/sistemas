@@ -15,7 +15,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DIF | Inicio</title>
-    <link rel="stylesheet" type="text/css" href="assets/css/tarjeta.css"> <!-- Agrega esta línea para incluir el CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/tarjeta.css">
 
     <?php include('includes/header.php'); ?>
 </head>
@@ -23,10 +23,9 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
     <?php if ($tipo_usuario == 1) { ?>
         <?php include('cards.php'); ?>
-        <!-- <a href="registro_usuario.php">Registrar Usuario</a> -->
     <?php } elseif ($tipo_usuario == 2) { ?>
         <p>Bienvenido, usuario.</p>
-        <?php include('cards.php'); ?>
+        <?php include('card.php'); ?>
     <?php } ?>
 
     <a href="logout.php">Cerrar sesión</a>
