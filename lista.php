@@ -34,6 +34,7 @@ include('includes/conexion.php');
                         <th>Nombre</th>
                         <th>Correo</th>
                         <th>Cargo</th>
+                        <th>Tipo de registro</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -51,6 +52,8 @@ include('includes/conexion.php');
                                 echo $cargo;
                                 ?>
                             </td>
+                            <td data-label="Correo"><?php echo $row['Tipo'] ?></td>
+
                         </tr>
                     <?php } ?>
                 </tbody>
