@@ -22,13 +22,23 @@ if (isset($_SESSION['tipo_usuario']) && $_SESSION['tipo_usuario'] == 1) {
     echo '<a href="subcategoria.php">Registrar coordinación</a>';
     echo '<a href="subsub.php">Registrar un servicio</a>';
     echo '<a href="crud.php">Resguardos dif</a>';
-
+}
     // Código de búsqueda (comentado)
     // echo ' <form class="d-flex" role="search">
     // <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">';
 
+    elseif (isset($_SESSION['tipo_usuario']) && $_SESSION['tipo_usuario'] == 2) {
+        echo '<nav class="navbar bg-body-tertiary">';
+        echo '<div class="container-fluid">';
+        echo '<img src="assets/img/DIF2.png" alt="Logo DIF2" id="logo">'; // Ajusta la ruta del logo según tu estructura de carpetas
+    
+        echo '<link rel="stylesheet" href="assets/css/tarjeta.css">'; // <-- Ajusta la ruta del archivo CSS
+        
+        echo '<a href="total_bienes.php">Lista completa de bienes y servicios</a>';
+
+    }
     echo '</div>';
     echo '</nav>';
     
-}
+
 ?>
