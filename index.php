@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Verificar la contraseña hasheada
         if (password_verify($contrasena, $fila['Passwo'])) {
             $_SESSION['tipo_usuario'] = $fila['Puesto'];
-            $_SESSION['categoria_usuario'] = $fila['NombreCategoria']; // Nueva línea
+            $_SESSION['categoria_usuario'] = $fila['NombreCategoria'];
             header('Location: dashboard.php');
             exit();
         } else {

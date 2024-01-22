@@ -6,7 +6,6 @@ if (!isset($_SESSION['tipo_usuario'])) {
     exit();
 }
 
-$tipo_usuario = $_SESSION['tipo_usuario'];
 
 include('../includes/conexion.php');
 
@@ -14,15 +13,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Validar campos vacíos
     if (empty($_POST['nombre']) || empty($_POST['password']) || empty($_POST['email']) || empty($_POST['tipo_usuario'])) {
         $_SESSION['mensaje_error'] = "Por favor, completa todos los campos.";
-        header('Location: ../registro_usuario.php');
+        header('Location: ../registro_direccion.php');
         exit();
     }
 
     // Asignar valores a variables
     $nombre = $_POST['nombre'];
-    $password = $_POST['password'];
-    $email = $_POST['email'];
-    $tipo_usuario = $_POST['tipo_usuario'];
+    $puesto = $_POST['puesto'];
 
     // Validación adicional si es necesario
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -38,17 +35,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $identificador = null;
     $nombre_subsub = null;
 
-    // Obtener el identificador y nombre según el tipo de registro
-    if ($tipo_registro == 'direccion') {
-        $identificador = $_POST['subcategoria'];
-        $consulta_nombre = "SELECT nombre_categoria FROM subcategoria WHERE identificador_categoria = ?";
-    } elseif ($tipo_registro == 'coordinacion') {
-        $identificador = $_POST['subcategoria'];
-        $consulta_nombre = "SELECT nombre_subcategoria FROM subcategoria WHERE identificador = ?";
-    } elseif ($tipo_registro == 'servicio') {
-        $identificador = $_POST['subcategoria'];
-        $consulta_nombre = "SELECT nombre_subsub FROM subsub WHERE identificador = ?";
-    }
 
     // Consultar el nombre correspondiente al identificador
     $stmt_nombre = $conexion->prepare($consulta_nombre);
@@ -77,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
     // Consulta SQL parametrizada para prevenir inyecciones SQL
-    $consulta = "INSERT INTO usuarios (FullName, Passwo, Puesto, EmailId, NombreCategoria, TipoRegistro) VALUES (?, ?, ?, ?, ?, ?)";
+    $consulta = "INSERT INTO usuarios_direccion (FullName, Puesto) VALUES (?, ?, ?, ?, ?, ?)";
     $stmt = $conexion->prepare($consulta);
 
     // Manejo de errores para la preparación de la consulta
@@ -86,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     // Asignar parámetros y ejecutar la consulta
-    $stmt->bind_param("ssisss", $nombre, $hashed_password, $tipo_usuario, $email, $nombre_subsub, $tipo_registro);
+    $stmt->bind_param("ssisss", $nombre, $hashed_password, $puesto);
 
     // Mostrar un mensaje si se registró correctamente
     if ($stmt->execute()) {
