@@ -31,33 +31,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         exit();
     }
 
-    // Obtener el valor del tipo de registro (dirección, coordinación o servicio)
-    $tipo_registro = $_POST['tipo_registro'];
-
-    // Inicializar variables para almacenar el identificador y nombre
-    $identificador = null;
-    $nombre_subsub = null;
-
-    // Obtener el identificador y nombre según el tipo de registro
-    if ($tipo_registro == 'direccion') {
-        $identificador = $_POST['subcategoria'];
-        $consulta_nombre = "SELECT nombre_categoria FROM subcategoria WHERE identificador_categoria = ?";
-    } elseif ($tipo_registro == 'coordinacion') {
-        $identificador = $_POST['subcategoria'];
-        $consulta_nombre = "SELECT nombre_subcategoria FROM subcategoria WHERE identificador = ?";
-    } elseif ($tipo_registro == 'servicio') {
-        $identificador = $_POST['subcategoria'];
-        $consulta_nombre = "SELECT nombre_subsub FROM subsub WHERE identificador = ?";
-    }
-
-    // Consultar el nombre correspondiente al identificador
-    $stmt_nombre = $conexion->prepare($consulta_nombre);
-    $stmt_nombre->bind_param("i", $identificador);
-    $stmt_nombre->execute();
-    $stmt_nombre->bind_result($nombre_subsub);
-    $stmt_nombre->fetch();
-    $stmt_nombre->close();
-
     // Verificar si el correo electrónico ya está registrado
     $consulta_email_existente = "SELECT * FROM usuarios WHERE EmailId = ?";
     $stmt_email_existente = $conexion->prepare($consulta_email_existente);
@@ -77,16 +50,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
     // Consulta SQL parametrizada para prevenir inyecciones SQL
-    $consulta = "INSERT INTO usuarios (FullName, Passwo, Puesto, EmailId, NombreCategoria, TipoRegistro) VALUES (?, ?, ?, ?, ?, ?)";
+    $consulta = "INSERT INTO usuarios (FullName, Passwo, Puesto, EmailId) VALUES (?, ?, ?, ?)";
     $stmt = $conexion->prepare($consulta);
-
-    // Manejo de errores para la preparación de la consulta
-    if (!$stmt) {
-        die('Error en la preparación de la consulta: ' . $conexion->error);
-    }
-
-    // Asignar parámetros y ejecutar la consulta
-    $stmt->bind_param("ssisss", $nombre, $hashed_password, $tipo_usuario, $email, $nombre_subsub, $tipo_registro);
+    $stmt->bind_param("ssis", $nombre, $hashed_password, $tipo_usuario, $email);
 
     // Mostrar un mensaje si se registró correctamente
     if ($stmt->execute()) {
@@ -101,3 +67,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $conexion->close();
 }
 ?>
+
+<!-- Resto del código HTML -->
+
