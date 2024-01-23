@@ -15,6 +15,9 @@ if (isset($_SESSION['tipo_usuario']) && $_SESSION['tipo_usuario'] == 1) {
 
     echo '<a href="dashboard.php">Inicio</a>';
     echo '<a href="registro_usuario.php">Registrar Usuario</a>';
+    echo '<a href="registrar_direccion.php">Registrar Usuario de direccion</a>';
+    echo '<a href="registrar_coordinacion.php">Registrar Usuario de coordinacion</a>';
+    echo '<a href="registrar_servicio.php">Registrar Usuario de servicio</a>';
     echo '<a href="lista.php">Lista de usuarios</a>';
     echo '<a href="lista_bienes.php">Añadir a la Lista de bienes y servicios</a>';
     echo '<a href="total_bienes.php">Lista completa de bienes y servicios</a>';

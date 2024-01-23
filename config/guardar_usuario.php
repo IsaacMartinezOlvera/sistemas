@@ -6,7 +6,6 @@ if (!isset($_SESSION['tipo_usuario'])) {
     exit();
 }
 
-$tipo_usuario = $_SESSION['tipo_usuario'];
 
 include('../includes/conexion.php');
 
@@ -14,15 +13,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Validar campos vacíos
     if (empty($_POST['nombre']) || empty($_POST['password']) || empty($_POST['email']) || empty($_POST['tipo_usuario'])) {
         $_SESSION['mensaje_error'] = "Por favor, completa todos los campos.";
-        header('Location: ../registro_usuario.php');
+        header('Location: ../registro_direccion.php');
         exit();
     }
 
     // Asignar valores a variables
     $nombre = $_POST['nombre'];
-    $password = $_POST['password'];
-    $email = $_POST['email'];
-    $tipo_usuario = $_POST['tipo_usuario'];
+    $puesto = $_POST['puesto'];
 
     // Validación adicional si es necesario
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -31,6 +28,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         exit();
     }
 
+<<<<<<< HEAD
+=======
+    // Obtener el valor del tipo de registro (dirección, coordinación o servicio)
+    $tipo_registro = $_POST['tipo_registro'];
+
+    // Inicializar variables para almacenar el identificador y nombre
+    $identificador = null;
+    $nombre_subsub = null;
+
+
+    // Consultar el nombre correspondiente al identificador
+    $stmt_nombre = $conexion->prepare($consulta_nombre);
+    $stmt_nombre->bind_param("i", $identificador);
+    $stmt_nombre->execute();
+    $stmt_nombre->bind_result($nombre_subsub);
+    $stmt_nombre->fetch();
+    $stmt_nombre->close();
+
+>>>>>>> 9cbbe0de6662f910250e979e7dffb991c3bfa10e
     // Verificar si el correo electrónico ya está registrado
     $consulta_email_existente = "SELECT * FROM usuarios WHERE EmailId = ?";
     $stmt_email_existente = $conexion->prepare($consulta_email_existente);
@@ -50,9 +66,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
     // Consulta SQL parametrizada para prevenir inyecciones SQL
+<<<<<<< HEAD
     $consulta = "INSERT INTO usuarios (FullName, Passwo, Puesto, EmailId) VALUES (?, ?, ?, ?)";
     $stmt = $conexion->prepare($consulta);
     $stmt->bind_param("ssis", $nombre, $hashed_password, $tipo_usuario, $email);
+=======
+    $consulta = "INSERT INTO usuarios_direccion (FullName, Puesto) VALUES (?, ?, ?, ?, ?, ?)";
+    $stmt = $conexion->prepare($consulta);
+
+    // Manejo de errores para la preparación de la consulta
+    if (!$stmt) {
+        die('Error en la preparación de la consulta: ' . $conexion->error);
+    }
+
+    // Asignar parámetros y ejecutar la consulta
+    $stmt->bind_param("ssisss", $nombre, $hashed_password, $puesto);
+>>>>>>> 9cbbe0de6662f910250e979e7dffb991c3bfa10e
 
     // Mostrar un mensaje si se registró correctamente
     if ($stmt->execute()) {
